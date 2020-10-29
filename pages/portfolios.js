@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import BaseLayout from '../components/layouts/BaseLayout';
-class About extends Component {
+
+class Portfolios extends Component {
   render() {
     return (
       <div>
         <BaseLayout>
-          <h1>i am about page</h1>
+          <h1>i am portfolio pages</h1>
         </BaseLayout>
       </div>
     )
   }
 }
-export default About;
+export default Portfolios;

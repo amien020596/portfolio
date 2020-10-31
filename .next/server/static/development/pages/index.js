@@ -413,15 +413,26 @@ var Index = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(Index);
 
-  function Index() {
+  _createClass(Index, null, [{
+    key: "getInitialProps",
+    value: function getInitialProps() {
+      console.log("running getInitialProps");
+      return {
+        getdata: "this from data get initial props"
+      };
+    }
+  }]);
+
+  function Index(props) {
     var _this;
 
     _classCallCheck(this, Index);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     console.log("construct");
     _this.state = {
-      title: "title state"
+      title: "title state",
+      dataprops: _this.props.getdata
     }; // this.updateTitle = this.updateTitle.bind(this)
 
     return _this;
@@ -455,40 +466,48 @@ var Index = /*#__PURE__*/function (_Component) {
       console.log("render");
       console.log("this.updateTitle", this.updateTitle);
       var title = this.state.title;
+      var dataprops = this.state.dataprops;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 45,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 46,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39,
+          lineNumber: 47,
           columnNumber: 11
         }
       }, "Welcome Page! from class component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 48,
           columnNumber: 11
         }
-      }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 11
+        }
+      }, dataprops), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.updateTitle,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 50,
           columnNumber: 11
         }
       }, "Update Title")));

@@ -1,11 +1,21 @@
+import Axios from 'axios';
 import React, { Component } from 'react'
 import BaseLayout from '../components/layouts/BaseLayout';
+import axios from 'axios';
 
 class Index extends Component {
-  static getInitialProps() {
-    console.log("running getInitialProps")
+  static async getInitialProps() {
+    let userData = {}
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+      userData = response.data;
+    } catch (error) {
+      console.error(error)
+    }
+
     return {
-      getdata: "this from data get initial props"
+      getdata: "this from data get initial props",
+      userData
     }
   }
   constructor(props) {
@@ -30,15 +40,14 @@ class Index extends Component {
     console.log("componentWillUnmount")
   }
 
-  updateTitle() {
+  updateTitle = () => {
     this.setState({
       title: "updated title state"
     })
   }
 
   render() {
-    console.log("render")
-    console.log("this.updateTitle", this.updateTitle)
+    const { userData } = this.props;
     const title = this.state.title;
     const dataprops = this.state.dataprops;
     return (
@@ -46,6 +55,7 @@ class Index extends Component {
         <BaseLayout>
           <h1>Welcome Page! from class component</h1>
           <h3>{title}</h3>
+          <h3>{userData.title}</h3>
           <h2>{dataprops}</h2>
           <button onClick={this.updateTitle}>Update Title</button>
         </BaseLayout>

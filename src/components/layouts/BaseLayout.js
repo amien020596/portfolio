@@ -1,43 +1,46 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Header from '../shared/Headers';
-import '../../styles/main.scss';
 import Head from "next/head";
-import Link from "next/link";
 
-class BaseLayout extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Head>
-          <link
-            rel="preload"
-            href="../../../static/fonts/Montserrat-Bold.ttf"
-            as="font"
-            crossOrigin=""
-          />
-          <link
-            rel="preload"
-            href="../../../static/fonts/Montserrat-Italic.ttf"
-            as="font"
-            crossOrigin=""
-          />
-          <link
-            rel="preload"
-            href="../../../static/fonts/Montserrat-Light.ttf"
-            as="font"
-            crossOrigin=""
-          />
-          <link
-            rel="preload"
-            href="../../../static/fonts/Montserrat-Regular.ttf"
-            as="font"
-            crossOrigin=""
-          />
-        </Head>
+const BaseLayout = (props) => {
+  const { children, className } = props;
+  return (
+    <React.Fragment>
+      <Head>
+        <link
+          rel="preload"
+          href="../../../static/fonts/Montserrat-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="../../../static/fonts/Montserrat-Italic.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="../../../static/fonts/Montserrat-Light.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="../../../static/fonts/Montserrat-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
+      <div className="layout-container">
         <Header />
-        {this.props.children}
-      </React.Fragment>
-    )
-  }
+        <main className={`cover ${className}`}>
+          <div className="wrapper">
+            {children}
+          </div>
+        </main>
+      </div>
+    </React.Fragment>
+  )
 }
 export default BaseLayout;

@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react'
-import BaseLayout from '../components/layouts/BaseLayout';
+import BaseLayout from '../src/components/layouts/BaseLayout';
 import axios from 'axios';
 // import Link from 'next/link';
 import { Link } from '../routes';

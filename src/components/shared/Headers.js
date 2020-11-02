@@ -1,29 +1,3 @@
-
-
-// class Header extends Component {
-//   render() {
-
-//     return (
-//       <React.Fragment>
-//         <br />
-//         <Link href="/"><a>Home</a></Link>
-//         <Link href="/portfolios"><a>Portfolio</a></Link>
-//         <Link href="/cv"><a>CV</a></Link>
-//         <Link href="/blogs"><a>Blog</a></Link>
-//         <Link href="/about"><a>About</a></Link>
-//         <style jsx>
-//           {`
-//           a{
-//             font-size:20px;
-//           }        
-//         `}
-//         </style>
-//       </React.Fragment>
-//     )
-//   }
-// }
-
-
 import React, { useState, Component } from 'react';
 import Link from 'next/link';
 
@@ -31,7 +5,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 export const BsNavLink = props => {
   const { route, title } = props;
   return (
-    <Link href={route}><a className="nav-link">{title}</a></Link>
+    <Link href={route}><a className="nav-link port-navbar-link">{title}</a></Link>
   )
 }
 const Header = (props) => {
@@ -41,24 +15,24 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/" >reactstrap</NavbarBrand>
+      <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+        <NavbarBrand href="/" className="port-navbar-brand">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink route="/" title="Home" />
             </NavItem>
-            <NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink route="/portfolios" title="Portfolio" />
             </NavItem>
-            <NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink route="/cv" title="Cv" />
             </NavItem>
-            <NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink route="/blogs" title="Blog" />
             </NavItem>
-            <NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink route="/about" title="About" />
             </NavItem>
           </Nav>

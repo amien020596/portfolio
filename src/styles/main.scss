@@ -1,5 +1,6 @@
 @import './fonts';
 @import './index';
+@import './header';
 
 html, body{
   height:100%;
@@ -8,4 +9,7 @@ html, body{
 }
 .elementClassElement{
   color:blue;
+}
+.absolute {
+  position: absolute;
 }

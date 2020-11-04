@@ -8,6 +8,9 @@ export const BsNavLink = props => {
     <Link href={route}><a className="nav-link port-navbar-link">{title}</a></Link>
   )
 }
+export const Login = () => <span className="nav-link port-navbar-link clickable">Login</span>
+export const Logout = () => <span className="nav-link port-navbar-link clickable">Logout</span>
+
 const Header = (props) => {
   const [isOpen, setCollapsed] = useState(false);
 
@@ -34,6 +37,12 @@ const Header = (props) => {
             </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink route="/about" title="About" />
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <Login />
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <Logout />
             </NavItem>
           </Nav>
         </Collapse>

@@ -156,7 +156,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // styling
+ // import { Auth0 } from '../src/config/services/HocAuth0';
+// styling
 
 
 
@@ -178,21 +179,26 @@ var MyApp = /*#__PURE__*/function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21,
-          columnNumber: 7
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22,
-          columnNumber: 9
-        }
-      })));
+      return (
+        /*#__PURE__*/
+        // <Auth0>
+        react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 9
+          }
+        }))) // </Auth0>
+
+      );
     }
   }], [{
     key: "getInitialProps",

@@ -1,5 +1,7 @@
 import React, { useState, Component } from 'react';
 import Link from 'next/link';
+// import auth0 from '../../config/services/auth0';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 export const BsNavLink = props => {
@@ -8,7 +10,13 @@ export const BsNavLink = props => {
     <Link href={route}><a className="nav-link port-navbar-link">{title}</a></Link>
   )
 }
-export const Login = () => <span className="nav-link port-navbar-link clickable">Login</span>
+
+export const Login = () => {
+  const { loginWithRedirect } = useAuth0();
+  return (
+    <span onClick={() => loginWithRedirect()} className="nav-link port-navbar-link clickable">Login</span>
+  )
+}
 export const Logout = () => <span className="nav-link port-navbar-link clickable">Logout</span>
 
 const Header = (props) => {

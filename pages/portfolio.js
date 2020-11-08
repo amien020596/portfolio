@@ -20,7 +20,7 @@ class Portfolio extends Component {
     const { data } = this.props;
     return (
       <div>
-        <BaseLayout>
+        <BaseLayout auth={this.props.auth}>
           <BasePage>
             <h1>i am Portfolio page</h1>
             <h2>{data.title}</h2>

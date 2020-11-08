@@ -3,7 +3,7 @@ import Header from '../shared/Headers';
 import Head from "next/head";
 
 const BaseLayout = (props) => {
-  const { children, className } = props;
+  const { children, className, auth } = props;
   return (
     <React.Fragment>
       <Head>
@@ -33,7 +33,7 @@ const BaseLayout = (props) => {
         />
       </Head>
       <div className="layout-container">
-        <Header />
+        <Header auth={auth} />
         <main className={`cover ${className}`}>
           <div className="wrapper">
             {children}

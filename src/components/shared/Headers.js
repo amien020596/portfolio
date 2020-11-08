@@ -19,19 +19,22 @@ export const BsNavLink = props => {
 export const Login = () => {
 
   return (
-    <span className="nav-link port-navbar-link clickable">Login</span>
+    <span onClick={auth0.login} className="nav-link port-navbar-link clickable">Login</span>
   )
 }
 
 export const Logout = () => {
 
-  return (<span className="nav-link port-navbar-link clickable">Logout</span>)
+  return (
+    <span onClick={auth0.logout} className="nav-link port-navbar-link clickable">Logout</span>
+  )
 }
 
 const Header = (props) => {
 
   const [isOpen, setCollapsed] = useState(false);
   const toggleNavbar = () => setCollapsed(!isOpen);
+  const { auth } = props;
 
   return (
     <div>
@@ -55,12 +58,12 @@ const Header = (props) => {
             <NavItem className="port-navbar-item">
               <BsNavLink route="/about" title="About" />
             </NavItem>
-            <NavItem className="port-navbar-item">
+            {!auth && (<NavItem className="port-navbar-item">
               <Login />
-            </NavItem>
-            <NavItem className="port-navbar-item">
+            </NavItem>)}
+            {auth && (<NavItem className="port-navbar-item">
               <Logout />
-            </NavItem>
+            </NavItem>)}
           </Nav>
         </Collapse>
       </Navbar>

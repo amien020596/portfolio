@@ -4,11 +4,11 @@ import BasePage from '../src/components/layouts/BasePage';
 class About extends Component {
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout auth={this.props.auth}>
         <BasePage className="about-page">
           <h1>i am about page</h1>
         </BasePage>
-      </BaseLayout>
+      </BaseLayout >
     )
   }
 }

@@ -8,7 +8,7 @@ class Auth {
       clientID: 'sZ9wppz9ZCvEq7pziETz3eGtAEZGq4Wb',
       redirectUri: 'http://localhost:3003/callback',
       responseType: 'token id_token',
-      scope: 'openid'
+      scope: 'openid profile'
     })
     this.login = this.login.bind(this);
   }
